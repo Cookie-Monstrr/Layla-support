@@ -1,0 +1,67 @@
+:root {
+  color-scheme: light;
+  --cream: #f7f2e8;
+  --paper: #fffdf7;
+  --green: #1f3d35;
+  --muted: #66766d;
+  --copper: #aa5c35;
+  --line: #cbd1c6;
+  --panel: #efeee5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--green);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+a { color: #874625; text-underline-offset: 0.18em; }
+a:hover { color: var(--copper); }
+
+.shell { width: min(760px, calc(100% - 40px)); margin: 0 auto; }
+
+header { padding: 42px 0 24px; border-bottom: 1px solid var(--line); }
+.brand { margin: 0; font: 700 3.2rem/1 Georgia, serif; letter-spacing: -0.07em; }
+.brand span { color: var(--copper); }
+nav { margin-top: 22px; display: flex; gap: 22px; flex-wrap: wrap; }
+nav a { color: var(--green); font-weight: 650; text-decoration: none; }
+
+main { padding: 46px 0 72px; }
+h1, h2 { font-family: Georgia, serif; letter-spacing: -0.025em; }
+h1 { font-size: clamp(2.3rem, 8vw, 4rem); line-height: 1.05; margin: 0 0 22px; }
+h2 { font-size: 1.65rem; line-height: 1.25; margin: 46px 0 12px; }
+h3 { font-size: 1.05rem; margin: 28px 0 8px; }
+p, li { color: var(--muted); }
+strong { color: var(--green); }
+
+.lead { font-size: 1.25rem; max-width: 660px; }
+.eyebrow { color: var(--copper); font-size: 0.78rem; font-weight: 750; letter-spacing: 0.13em; text-transform: uppercase; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 24px; margin: 28px 0; padding: 25px; }
+.card h2, .card h3 { margin-top: 0; }
+.button { display: inline-block; background: var(--green); color: var(--paper); border-radius: 999px; padding: 12px 22px; font-weight: 700; text-decoration: none; }
+.button:hover { color: white; background: #2b5146; }
+.draft { background: #f5e5d7; border: 1px solid #d9b399; color: #6f351c; border-radius: 14px; padding: 12px 16px; }
+.draft strong { color: #6f351c; }
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.facts div { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+.facts p { margin: 4px 0 0; }
+
+footer { border-top: 1px solid var(--line); padding: 28px 0 48px; font-size: 0.9rem; }
+
+@media (max-width: 620px) {
+  .shell { width: min(100% - 28px, 760px); }
+  header { padding-top: 30px; }
+  .brand { font-size: 2.7rem; }
+  main { padding-top: 34px; }
+  .facts { grid-template-columns: 1fr; }
+  .card { padding: 20px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: color 140ms ease, background 140ms ease; }
+}
